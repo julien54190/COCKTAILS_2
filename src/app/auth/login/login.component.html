@@ -1,0 +1,29 @@
+<div class="container">
+  <form class="d-flex flex-column flex-align-items-center"
+    #f="ngForm"
+    (ngSubmit)="f.form.valid && onSubmit()">
+    <div class="m-10 d-flex flex-column flex-align-items-center">
+      <label for="email">Email</label>
+      <input
+      type="text" name="email" id="email"
+      [(ngModel)]="form.email" #email="ngModel" required>
+      <div class="form_error" *ngIf="email.errors && f.submitted">
+        Email requis
+      </div>
+    </div>
+    <div class="m-10 d-flex flex-column flex-align-items-center">
+      <label for="password">Password</label>
+      <input
+      type="password" name="password" id="password"
+      [(ngModel)]="form.password" #password="ngModel" required minlength="5">
+      <div class="form_error" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors['required']">Password requis</div>
+        <div *ngIf="password.errors['minlength']">Password doit faire 5 caractere</div>
+
+      </div>
+    </div>
+    <div class="group">
+      <button class="btn btn-primary">login</button>
+    </div>
+  </form>
+</div>

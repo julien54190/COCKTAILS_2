@@ -1,0 +1,24 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>#</th>
+        <th>Nom</th>
+        <th>description</th>
+        <th>recette</th>
+        <th>dt Création</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cocktail of cocktailList">
+        <td><a [routerLink]="['edit', cocktail.id]">Edit</a></td>
+        <td>{{cocktail.id}}</td>
+        <td>{{cocktail.nom}}</td>
+        <td>{{cocktail.description}}</td>
+        <td>{{cocktail.recette}}</td>
+        <td>{{cocktail.createdAt | date:'dd/MM/yyyy'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+<nav>
+  <a [routerLink]="['../home']">Retour acceuil</a>
+  <ul id="sidemenu">
+    <li class="mb-10 mt-10"><a [routerLink]="['dashboard']">Dashboard</a></li>
+    <li class="mb-10">> User</li>
+    <ul class="mb-10">
+      <li><a [routerLink]="['user']">Liste</a></li>
+      <li><a [routerLink]="['user/add']">Ajouter</a></li>
+    </ul>
+    <li class="mb-10">> Cocktail</li>
+    <ul>
+      <li><a [routerLink]="['cocktail']">Liste</a></li>
+      <li><a [routerLink]="['cocktail/add']">Ajouter</a></li>
+    </ul>
+  </ul>
+</nav>

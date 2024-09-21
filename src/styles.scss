@@ -1,0 +1,176 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+ul {
+  list-style: none
+}
+
+img{
+  max-width: 100%
+}
+a{
+  text-decoration: none;
+  color:  inherit
+}
+
+:root{
+  --font-family: "Roboto", sans-serif;
+  --primary: #546de5;
+  --secondary: #778beb;
+  --accent: #e5546d;
+  --lightgray: #ddd;
+  --text-regular: #444
+}
+
+body{
+  font-family: var(--font-family);
+  color: var(--text-regular)
+}
+//layout
+
+.container{
+  max-width: 1200px;
+  display: block;
+  margin: auto
+}
+
+.d-flex{
+  display: flex
+}
+
+.flex-row{
+  flex-direction: row
+}
+
+.flex-column{
+  flex-direction:  column
+}
+
+.flex-justify-content-center{
+  justify-content: center
+}
+
+.flex-justify-content-between{
+  justify-content: space-between
+}
+
+.flex-align-items-center{
+  align-items:  center
+}
+
+.flex-align-items-between{
+  align-items: space-between
+}
+
+.flex-fill{
+  flex: 1 1 auto
+}
+
+.flex-50{
+  flex: 1 1 50%
+}
+
+.active {
+  background: var(--primary);
+  border-radius: 3px;
+  color: white ;
+  font-weight: bold;
+}
+
+// Utils
+
+.p-10{
+  padding: 10px
+}
+
+.p-20{
+  padding: 20px
+}
+
+.pr-10{
+  padding-right: 10px
+}
+
+.pl-10{
+  padding-left: 10px
+}
+
+.m-10{
+  margin: 10px
+}
+
+.m-20{
+  margin: 20px
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mb-20{
+  margin-bottom: 20px
+}
+
+//theme
+
+.list-primary{
+  li{
+    padding: 10px 15px;
+    border: 1px solid var(--lightgray);
+    border-top: 0;
+    transition: all .4s;
+    &:first-child {
+    border-top: 1px solid var(--lightgray);
+    border-top-left-radius: 3px;
+    border-top-right-radius:  3px;
+  }
+    &:last-child{
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius:3px;
+    }
+    &:hover{
+      background-color: var(--primary);
+      color: white;
+      cursor: pointer
+    }
+  }
+}
+
+.btn{
+  padding: 10px 15px;
+  background-color: white;
+  border: 0;
+  border-radius: 3px;
+  font-weight: 700;
+  transition: background-color .4s;
+  cursor: pointer;
+  &-primary{
+    background-color: var(--primary);
+    color: white;
+    &:hover{
+      background-color: var(--secondary)
+    }
+  }
+  &-secondary{
+    background-color: var(--accent);
+  }
+}
+//debug
+
+.d1{
+  border: 1px solid red
+}
+
+.d2{
+  border: 1px solid green
+}
+
+
+
