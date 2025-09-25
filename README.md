@@ -1,27 +1,53 @@
-# Cocktail
+## Cocktails – Angular + API Express/Sequelize
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+Petit projet Angular 17 (front) avec une API Node.js/Express + Sequelize (MySQL) pour gérer des cocktails et des utilisateurs.
 
-## Development server
+### Structure
+- `src/` : application Angular 17
+- `server.ts` : serveur SSR (Angular Universal / Express)
+- `api/` : API Express + Sequelize (MySQL) avec routes `cocktails`, `users`, `auth`
+- `documentation/` : documentation Compodoc générée (`documentation/index.html`)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Prérequis
+- Node.js LTS et npm
+- Angular CLI : `npm i -g @angular/cli`
+- MySQL installé et accessible
 
-## Code scaffolding
+### Configuration API (.env)
+Créer un fichier `.env` dans `api/` :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```env
+SERVER_PORT=3000
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=cocktails
+DB_USER=root
+DB_PASSWORD=motdepasse
+JWT_SECRET=changeme
+```
 
-## Build
+### Installation
+1) À la racine (front) : `npm install`
+2) Dans `api/` (back) : `npm install`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Lancer en développement
+- Front (Angular) : `npm start` puis ouvrir `http://localhost:4200/`
+- Back (API) : depuis `api/` → `npm run dev` (ou `npm start`) → `http://localhost:3000/`
 
-## Running unit tests
+### Routes principales (API)
+- `GET /` : ping serveur
+- `POST /auth/login` : authentification
+- `GET/POST/PUT/DELETE /cocktails` : gestion des cocktails
+- `GET/POST/PUT/DELETE /users` : gestion des utilisateurs
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Build (front)
+- `npm run build` → sortie dans `dist/`
 
-## Running end-to-end tests
+### Documentation
+- Scripts : `npm run compodoc`, `npm run compodoc:serve`
+- Version statique : dossier `documentation/`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Notes
+- Angular 17 + SSR possible via `server.ts`
+- API Express + Sequelize (MySQL), CORS et JSON activés
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
